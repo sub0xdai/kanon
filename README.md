@@ -1,5 +1,7 @@
 # kanon
 
+![A white cross glowing on a dark background](./jesus.png)
+
 Five skills that route biblical text queries to one of five divisions of Scripture.
 The name is Greek, a rule, and so the measure by which the books are numbered and ordered.
 
