@@ -1,5 +1,5 @@
 ---
-name: kanon-lex
+name: kanon-law
 description: >-
   Route biblical text queries to the Law (Torah, Pentateuch) - Genesis, Exodus,
   Leviticus, Numbers, Deuteronomy.
@@ -11,7 +11,7 @@ description: >-
   Also triggers on "Torah", "Pentateuch", "five books of Moses", "law of Moses".
 ---
 
-# kanon-lex
+# kanon-law
 
 Retrieve text from the five books of the Law. This skill owns the routing decision and
 the parameter contract. It does not own translation choice or the text store.
@@ -40,14 +40,14 @@ Chapter ranges: Genesis 1-50, Exodus 1-40, Leviticus 1-27, Numbers 1-36, Deutero
 
 | Query looks like | Actual owner |
 |---|---|
-| The conquest of Canaan, Jericho, the judges, David, Solomon, the exile | `kanon-historia` |
-| Job, Psalms, Proverbs, Ecclesiastes, Song of Solomon | `kanon-sapientia` |
-| Isaiah through Malachi, including Lamentations and Daniel | `kanon-prophetae` |
-| Matthew through Revelation | `kanon-novum-testamentum` |
+| The conquest of Canaan, Jericho, the judges, David, Solomon, the exile | `kanon-history` |
+| Job, Psalms, Proverbs, Ecclesiastes, Song of Solomon | `kanon-wisdom` |
+| Isaiah through Malachi, including Lamentations and Daniel | `kanon-prophets` |
+| Matthew through Revelation | `kanon-new-testament` |
 | A quote of Moses recorded in a later book | Confirm the cited book |
 
 Joshua is the boundary case. Joshua the man appears in Exodus and Numbers, so those
-passages stay here. The book of Joshua starts `kanon-historia`.
+passages stay here. The book of Joshua starts `kanon-history`.
 
 ## Parameter Resolution
 

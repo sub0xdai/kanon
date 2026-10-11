@@ -1,5 +1,5 @@
 ---
-name: kanon-novum-testamentum
+name: kanon-new-testament
 description: >-
   Route biblical text queries to the New Testament - Matthew, Mark, Luke, John, Acts,
   Romans, 1 and 2 Corinthians, Galatians, Ephesians, Philippians, Colossians,
@@ -14,7 +14,7 @@ description: >-
   Also triggers on "gospels", "epistles", "Pauline letters", "synoptic", "apocalypse".
 ---
 
-# kanon-novum-testamentum
+# kanon-new-testament
 
 Retrieve text from the twenty-seven New Testament books. This skill owns the routing
 decision and the parameter contract. It does not own translation choice or text store.
@@ -52,10 +52,10 @@ manuscripts, so confirm before serving Mark 16.
 
 | Query looks like | Actual owner |
 |---|---|
-| Genesis through Deuteronomy | `kanon-lex` |
-| Joshua through Esther | `kanon-historia` |
-| Job through Song of Solomon | `kanon-sapientia` |
-| Isaiah through Malachi | `kanon-prophetae` |
+| Genesis through Deuteronomy | `kanon-law` |
+| Joshua through Esther | `kanon-history` |
+| Job through Song of Solomon | `kanon-wisdom` |
+| Isaiah through Malachi | `kanon-prophets` |
 
 Name traps. "Hebrews" is a New Testament letter despite sounding Old Testament.
 Revelation is this division, and a query about the apocalypse belongs here unless it

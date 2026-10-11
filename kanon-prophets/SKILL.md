@@ -1,5 +1,5 @@
 ---
-name: kanon-prophetae
+name: kanon-prophets
 description: >-
   Route biblical text queries to the Prophetic Books - Isaiah, Jeremiah, Lamentations,
   Ezekiel, Daniel, Hosea, Joel, Amos, Obadiah, Jonah, Micah, Nahum, Habakkuk,
@@ -13,7 +13,7 @@ description: >-
   "writing prophets", "apocalyptic".
 ---
 
-# kanon-prophetae
+# kanon-prophets
 
 Retrieve text from the seventeen prophetic books. This skill owns the routing decision and
 the parameter contract. It does not own translation choice or the text store.
@@ -49,15 +49,15 @@ differs between the Hebrew and Greek traditions, so confirm chapter 3 before ser
 
 | Query looks like | Actual owner |
 |---|---|
-| Genesis through Deuteronomy | `kanon-lex` |
-| Joshua through Esther, where the prophets appear as characters | `kanon-historia` |
-| Job through Song of Solomon | `kanon-sapientia` |
-| Matthew through Revelation | `kanon-novum-testamentum` |
+| Genesis through Deuteronomy | `kanon-law` |
+| Joshua through Esther, where the prophets appear as characters | `kanon-history` |
+| Job through Song of Solomon | `kanon-wisdom` |
+| Matthew through Revelation | `kanon-new-testament` |
 
 Two canon traps. Daniel and Lamentations belong to this division in this ordering, even
 though the Hebrew canon files them under the Writings. And a prophet as a *character* in
-narrative stays with the narrative: Elijah in 1 Kings is `kanon-historia`, while Zechariah
-son of Jehoiada in 2 Chronicles is `kanon-historia` too, not this skill. Route by cited
+narrative stays with the narrative: Elijah in 1 Kings is `kanon-history`, while Zechariah
+son of Jehoiada in 2 Chronicles is `kanon-history` too, not this skill. Route by cited
 book.
 
 ## Parameter Resolution

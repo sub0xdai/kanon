@@ -1,5 +1,5 @@
 ---
-name: kanon-historia
+name: kanon-history
 description: >-
   Route biblical text queries to the Historical Books - Joshua, Judges, Ruth, 1 and 2
   Samuel, 1 and 2 Kings, 1 and 2 Chronicles, Ezra, Nehemiah, Esther.
@@ -11,7 +11,7 @@ description: >-
   Also triggers on "historical books", "former prophets", "deuteronomistic history".
 ---
 
-# kanon-historia
+# kanon-history
 
 Retrieve text from the twelve historical books. This skill owns the routing decision and
 the parameter contract. It does not own translation choice or the text store.
@@ -43,14 +43,14 @@ Chapter ranges run from Ruth, 4 chapters, to 2 Chronicles, 36 chapters. 1 Samuel
 
 | Query looks like | Actual owner |
 |---|---|
-| Genesis through Deuteronomy | `kanon-lex` |
-| Job through Song of Solomon | `kanon-sapientia` |
-| Isaiah through Malachi | `kanon-prophetae` |
-| Matthew through Revelation | `kanon-novum-testamentum` |
+| Genesis through Deuteronomy | `kanon-law` |
+| Job through Song of Solomon | `kanon-wisdom` |
+| Isaiah through Malachi | `kanon-prophets` |
+| Matthew through Revelation | `kanon-new-testament` |
 
 Prophet names are the main trap. Elijah, Elisha, Nathan, Gad and the "former prophets"
 label all point at narrative books, so those routes stay here. Only the books Isaiah
-through Malachi go to `kanon-prophetae`.
+through Malachi go to `kanon-prophets`.
 
 Chronicles retells Samuel and Kings. A query about a David event stays in whichever book
 the user cited. Do not redirect 1 Chronicles 21 to 2 Samuel 24.

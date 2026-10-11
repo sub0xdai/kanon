@@ -1,5 +1,5 @@
 ---
-name: kanon-sapientia
+name: kanon-wisdom
 description: >-
   Route biblical text queries to the Wisdom and Poetic Books - Job, Psalms, Proverbs,
   Ecclesiastes, Song of Solomon.
@@ -11,7 +11,7 @@ description: >-
   "Canticles", "Qoheleth".
 ---
 
-# kanon-sapientia
+# kanon-wisdom
 
 Retrieve text from the five wisdom and poetic books. This skill owns the routing decision
 and the parameter contract. It does not own translation choice or the text store.
@@ -42,14 +42,14 @@ a 66-chapter ceiling to it.
 
 | Query looks like | Actual owner |
 |---|---|
-| Genesis through Deuteronomy | `kanon-lex` |
-| Joshua through Esther | `kanon-historia` |
-| Isaiah through Malachi, including Lamentations | `kanon-prophetae` |
-| Matthew through Revelation | `kanon-novum-testamentum` |
+| Genesis through Deuteronomy | `kanon-law` |
+| Joshua through Esther | `kanon-history` |
+| Isaiah through Malachi, including Lamentations | `kanon-prophets` |
+| Matthew through Revelation | `kanon-new-testament` |
 
 Three traps. "Song of Solomon" is a wisdom book, not a Kings passage. Lamentations and
-its laments belong to `kanon-prophetae` even though they read like poetry. The wisdom of
-Solomon as a story about the man belongs to `kanon-historia`, while the collected sayings
+its laments belong to `kanon-prophets` even though they read like poetry. The wisdom of
+Solomon as a story about the man belongs to `kanon-history`, while the collected sayings
 belong here. Use the cited book, not the genre, to decide.
 
 ## Parameter Resolution

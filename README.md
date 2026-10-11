@@ -4,8 +4,8 @@ The word is Greek, and in the usage of the Church it means a rule or a measure, 
 measure by which the books of Holy Scripture are numbered and set in order.
 To arrange the books in their divisions is not to devise a scheme of our own, but to
 follow an ordering long since received among the faithful.
-The five skills take their names from the Latin titles by which the Western Church has
-known these same divisions.
+The skills take their names from those divisions, and they take them in English, that no
+one need carry a glossary in mind to know where a given book belongs.
 In this way the instrument is made to serve the text, and not the text the instrument.
 
 ## The Five Divisions
@@ -19,18 +19,14 @@ A query can therefore never have two lawful destinations.
 
 | Division | Directory | Books | Number |
 |---|---|---|---|
-| Law | `kanon-lex` | Genesis - Deuteronomy | 5 |
-| History | `kanon-historia` | Joshua - Esther | 12 |
-| Wisdom | `kanon-sapientia` | Job - Song of Solomon | 5 |
-| Prophets | `kanon-prophetae` | Isaiah - Malachi | 17 |
-| New Testament | `kanon-novum-testamentum` | Matthew - Revelation | 27 |
+| Law | `kanon-law` | Genesis - Deuteronomy | 5 |
+| History | `kanon-history` | Joshua - Esther | 12 |
+| Wisdom | `kanon-wisdom` | Job - Song of Solomon | 5 |
+| Prophets | `kanon-prophets` | Isaiah - Malachi | 17 |
+| New Testament | `kanon-new-testament` | Matthew - Revelation | 27 |
 
 The identifier by which the machinery names the tool is the same name with underscores
-in place of the hyphens, thus kanon_lex where the directory reads kanon-lex.
-
-The Latin titles are these: lex is law, historia is history, sapientia is wisdom, which
-the Vulgate calls the libri sapientiales, prophetae is prophets, and novum testamentum is
-the New Testament under the title Jerome himself gave it.
+in place of the hyphens, thus kanon_law where the directory reads kanon-law.
 
 ## The Two Files
 
