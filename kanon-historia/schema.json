@@ -1,0 +1,26 @@
+{
+  "name": "kanon_historia",
+  "description": "Route a biblical text query to the Historical Books: Joshua, Judges, Ruth, 1 Samuel, 2 Samuel, 1 Kings, 2 Kings, 1 Chronicles, 2 Chronicles, Ezra, Nehemiah, Esther. Use when the query names one of these twelve books, or asks about the conquest of Canaan, Jericho, the judges and the cycle of apostasy, Deborah, Gideon, Samson, Ruth and Naomi, Samuel's call, Saul, David and Goliath, David's reign, Absalom, Solomon's temple, the divided kingdom, Elijah, Elisha, Ahab and Jezebel, Hezekiah, Josiah's reform, the Assyrian and Babylonian exiles, the return from exile, the rebuilding of the temple and walls, or Purim and Haman. Be careful: Samuel, Nathan, Elijah, Elisha and Isaiah appear inside these books, but the historical books are still routed here, not to kanon_prophetae. Do not use for Genesis through Deuteronomy (use kanon_lex), for the wisdom and poetic books (use kanon_sapientia), for Isaiah through Malachi (use kanon_prophetae), or for Matthew onward (use kanon_novum_testamentum).",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "book": {
+        "type": "string",
+        "enum": ["Joshua", "Judges", "Ruth", "1 Samuel", "2 Samuel", "1 Kings", "2 Kings", "1 Chronicles", "2 Chronicles", "Ezra", "Nehemiah", "Esther"],
+        "description": "Target historical book. Numeric book names must keep the numeral and a single space, for example '1 Samuel' and '2 Kings'. Do not normalize to Roman numerals or to 'First Samuel'. A book outside this enum belongs to a different skill."
+      },
+      "chapter": {
+        "type": "integer",
+        "minimum": 1,
+        "description": "Target chapter number, 1-indexed, in the numbering of the named book. Ranges span Ruth's 4 chapters up to 2 Chronicles' 36, and include 1 Chronicles 1-29, 2 Samuel 1-24 and Esther 1-10."
+      },
+      "query": {
+        "type": "string",
+        "minLength": 1,
+        "description": "The user's search intent in their own words, stripped of the book and chapter reference. Keep the narrative or thematic wording. Example: for '1 Samuel 17 how did David beat Goliath', pass 'David defeats Goliath'."
+      }
+    },
+    "required": ["book", "chapter", "query"],
+    "additionalProperties": false
+  }
+}

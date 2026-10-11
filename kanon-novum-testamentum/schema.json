@@ -1,0 +1,26 @@
+{
+  "name": "kanon_novum_testamentum",
+  "description": "Route a biblical text query to the New Testament: Matthew, Mark, Luke, John, Acts, Romans, 1 Corinthians, 2 Corinthians, Galatians, Ephesians, Philippians, Colossians, 1 Thessalonians, 2 Thessalonians, 1 Timothy, 2 Timothy, Titus, Philemon, Hebrews, James, 1 Peter, 2 Peter, 1 John, 2 John, 3 John, Jude, Revelation. Use when the query names one of these twenty-seven books, or asks about the birth, baptism, temptation, miracles, parables, passion, crucifixion, resurrection or ascension of Jesus, the Sermon on the Mount, the Beatitudes, the Lord's Prayer, the Last Supper, the Great Commission, Pentecost, the conversion of Paul, the Jerusalem council, justification by faith, grace, sanctification, the fruit of the Spirit, spiritual gifts, the body of Christ, the armor of God, the kenosis hymn, election, the return of Christ, the millennium, the lake of fire, the new Jerusalem, or Armageddon. Name traps: 'Hebrews' is this division despite sounding Old Testament, and 'Revelation' is this division. Do not use for Genesis through Deuteronomy (use kanon_lex), Joshua through Esther (use kanon_historia), Job through Song of Solomon (use kanon_sapientia), or Isaiah through Malachi (use kanon_prophetae).",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "book": {
+        "type": "string",
+        "enum": ["Matthew", "Mark", "Luke", "John", "Acts", "Romans", "1 Corinthians", "2 Corinthians", "Galatians", "Ephesians", "Philippians", "Colossians", "1 Thessalonians", "2 Thessalonians", "1 Timothy", "2 Timothy", "Titus", "Philemon", "Hebrews", "James", "1 Peter", "2 Peter", "1 John", "2 John", "3 John", "Jude", "Revelation"],
+        "description": "Target New Testament book. Numeric book names must keep the numeral and a single space, for example '1 Corinthians' and '2 Timothy'. Do not normalize to Roman numerals or to 'First John'. Use 'Revelation', not 'Revelations', 'Apocalypse' or 'the Apocalypse of John'."
+      },
+      "chapter": {
+        "type": "integer",
+        "minimum": 1,
+        "description": "Target chapter number, 1-indexed, in the numbering of the named book. Ranges span Philemon, 2 John, 3 John and Jude at a single chapter up to Acts at 28 and Revelation at 22, and include Matthew 1-28, John 1-21, Romans 1-16 and Hebrews 1-13."
+      },
+      "query": {
+        "type": "string",
+        "minLength": 1,
+        "description": "The user's search intent in their own words, stripped of the book and chapter reference. Keep doctrinal or thematic wording. Example: for 'Romans 3 what does justification by faith mean', pass 'justification by faith'."
+      }
+    },
+    "required": ["book", "chapter", "query"],
+    "additionalProperties": false
+  }
+}

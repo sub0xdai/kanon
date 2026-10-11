@@ -1,0 +1,26 @@
+{
+  "name": "kanon_sapientia",
+  "description": "Route a biblical text query to the Wisdom and Poetic Books: Job, Psalms, Proverbs, Ecclesiastes, Song of Solomon. Use when the query names one of these five books, or asks about the fear of the Lord as wisdom, the suffering and patience of Job, theodicy, comfort in grief, the Psalms, imprecatory or lament psalms, the Shepherd Psalm, praise and worship poetry, the proverbs of Solomon, Lady Wisdom, child discipline and instruction, the meaning of life and vanity of vanities, or the allegory of married love. Watch two name traps: 'Song of Solomon' is this division and is not 1 Kings, and a query about 'the wisdom of Solomon' as narrative belongs to kanon_historia, while his collected sayings belong here. Do not use for Genesis through Deuteronomy (use kanon_lex), Joshua through Esther (use kanon_historia), Isaiah through Malachi including Lamentations and Daniel (use kanon_prophetae), or Matthew onward (use kanon_novum_testamentum).",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "book": {
+        "type": "string",
+        "enum": ["Job", "Psalms", "Proverbs", "Ecclesiastes", "Song of Solomon"],
+        "description": "Target wisdom or poetic book. Use 'Psalms' as the book name, not 'Psalm', even when the chapter is a single psalm. Use the full title 'Song of Solomon', not 'Song of Songs' or 'Canticles'. A book outside this enum belongs to a different skill."
+      },
+      "chapter": {
+        "type": "integer",
+        "minimum": 1,
+        "description": "Target chapter number, 1-indexed. Psalms is the outlier here and runs 1-150, so a query about Psalm 119 passes 119. Job runs 1-42, Proverbs 1-31, Ecclesiastes 1-12, Song of Solomon 1-8."
+      },
+      "query": {
+        "type": "string",
+        "minLength": 1,
+        "description": "The user's search intent in their own words, stripped of the book and chapter reference. Keep poetic or thematic wording. Example: for 'Psalm 23 what does valley of the shadow mean', pass 'valley of the shadow of death meaning'."
+      }
+    },
+    "required": ["book", "chapter", "query"],
+    "additionalProperties": false
+  }
+}

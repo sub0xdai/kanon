@@ -1,0 +1,26 @@
+{
+  "name": "kanon_lex",
+  "description": "Route a biblical text query to the Law (Torah, Pentateuch): Genesis, Exodus, Leviticus, Numbers, Deuteronomy. Use when the query names one of these five books, or asks about creation, the patriarchs, the exodus from Egypt, the ten plagues, the parting of the Red Sea, Mount Sinai, the Ten Commandments, the Decalogue, the tabernacle, the sacrificial system, the Levitical priesthood, cleanliness and purity law, the Day of Atonement, the census and wilderness wanderings, Balaam, the Shema, the covenant blessings and curses, or the death of Moses. Do not use for Joshua's conquest of Canaan or later Israelite history (use kanon_historia), for Job, Psalms, Proverbs, Ecclesiastes or Song of Solomon (use kanon_sapientia), for any prophet from Isaiah onward (use kanon_prophetae), or for any book from Matthew onward (use kanon_novum_testamentum). Faithful routing matters most for the names Genesis and Exodus, which users invoke for broad canonical questions and which never appear in another division.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "book": {
+        "type": "string",
+        "enum": ["Genesis", "Exodus", "Leviticus", "Numbers", "Deuteronomy"],
+        "description": "Target book of the Law. Must be one of the five books of the Pentateuch. A book outside this enum belongs to a different skill and must be routed there rather than coerced into this one."
+      },
+      "chapter": {
+        "type": "integer",
+        "minimum": 1,
+        "description": "Target chapter number, 1-indexed. Use the chapter numbering of the named book, which runs Genesis 1-50, Exodus 1-40, Leviticus 1-27, Numbers 1-36, Deuteronomy 1-34."
+      },
+      "query": {
+        "type": "string",
+        "minLength": 1,
+        "description": "The user's search intent in their own words, stripped of the book and chapter reference. Preserve topic wording and synonyms. Example: for 'Genesis 22 what does the binding of Isaac show about obedience', pass 'binding of Isaac obedience test'."
+      }
+    },
+    "required": ["book", "chapter", "query"],
+    "additionalProperties": false
+  }
+}
