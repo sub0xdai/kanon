@@ -2,8 +2,29 @@
 
 ![A white cross glowing on a dark background](./jesus.png)
 
-Five skills that route biblical text queries to one of five divisions of Scripture.
+Five canonical routing skills and a Socratic study skill that turn an AI agent into a
+Bible companion.
 The name is Greek, a rule, and so the measure by which the books are numbered and ordered.
+
+## Quick Start
+
+Clone the repository and open it in any agent that reads `AGENTS.md`, `CLAUDE.md`, or
+`SKILL.md` files:
+
+```bash
+git clone https://github.com/sub0xdai/kanon.git
+cd kanon
+```
+
+Start a conversation and name a passage, book, or question (for example, *"Let's study
+Psalm 23"* or *"Walk me through Romans 8"*). The agent enters Socratic companion mode via
+`kanon-socratic/SKILL.md` and routes passage lookups across the five divisions of
+Scripture.
+
+If you do not wire a Bible text store to the five routing schemas, keep your own Bible open
+in your preferred translation and paste or read the passage alongside the dialogue.
+
+## The Five Divisions
 
 | Division | Directory | Books | Number |
 |---|---|---|---|
@@ -16,14 +37,26 @@ The name is Greek, a rule, and so the measure by which the books are numbered an
 The sixty-six books divide cleanly across the five, so the book alone decides the route.
 The tool identifier is the directory name with underscores for hyphens, thus `kanon_law`.
 
+## The Socratic Companion
+
+`kanon-socratic/SKILL.md` layers a Socratic study framework on top of the five divisions.
+It is a study skill, not a sixth routing tool, so it intentionally has no `schema.json`.
+Rather than lecturing, it guides the reader through five movements—Orientation,
+Observation, Context and Canon, Examination, and Reflection—asking one grounded question at
+a time and routing cross-references back through the five division skills.
+
+`AGENTS.md` and `CLAUDE.md` wire this behavior automatically when the repository is cloned
+and opened in a compatible coding or chat agent.
+
 ## The Two Files
 
+Each of the five division directories holds two files:
 `SKILL.md` is for the agent: which persons, events, and themes belong to that division,
 which near resemblances belong to another, and how the three parameters are resolved.
 `schema.json` is for the machinery: the same description and the closed list of books, so
 a wrongly offered book is refused at the threshold.
 
-## Use
+## Tool Registration
 
 The schema is the common tool shape, being name, description, and parameters, and its
 parameters are valid JSON Schema draft 2020-12.
@@ -35,8 +68,8 @@ there.
 
 ## A Word of Caution
 
-This instrument finds a passage.
-It does not interpret it.
+This instrument finds a passage and asks questions of the reader.
+It does not claim authoritative interpretation.
 The Fathers read with fasting and prayer within the Tradition, and to them it was granted
 to understand; no such gift is given to a machine.
 
